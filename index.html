@@ -8,7 +8,9 @@
     <head>
         <meta charset="UTF-8">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
         <style>
             #container{
                 margin-left:auto;
@@ -16,6 +18,7 @@
                 position:absolute;
                 left: 0;
                 right: 0;
+                font-family: 'Comfortaa', cursive;
             }
 
             #home{
@@ -28,10 +31,7 @@
                 top:0px;
                 float: right;
                 border-radius: 1%;
-                border-top-width: 2px;
-                border-left-width: 2px;
-                border-right-width: 2px;
-                border-bottom-width: 2px;
+                border-width: 3px 3px 3px 3px;
                 border-style: solid;
                 
             }
@@ -57,22 +57,18 @@
                 /*margin-top: -42%;*/
                 position: inherit;
                 top:20%;
-                font-family: Georgia, 'Times New Roman', Times, serif ;
-                border-radius: 4px;
+                border-radius: 1%;
                 border-color: black;
-                border-top-width: 2px;
-                border-left-width: 2px;
-                border-right-width: 2px;
-                border-bottom-width: 2px;
+                border-width: 2px 2px 2px 2px;
                 border-style: solid;
             }
             #intro-large{
-                font-size: 60px;
+                font-size: 54px;
                 padding-left: 10px;
                 font-weight: 300;
             }
             #intro-small{
-                padding-bottom: 20px;
+                padding-bottom: 10px;
                 padding-left: 15px;
             }
             #navbar{
@@ -89,8 +85,10 @@
             #flex-item{
                 flex: 50%;
                 padding: 30px;
+                text-decoration: none;
             }
-
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+        
         </style>
     </head>
     
@@ -102,7 +100,7 @@
                 <a id= "flex-item" href="#about">About</a>
                 <a id= "flex-item" href="#home">Skills</a>
                 <a id= "flex-item" href="#about">Resume</a>
-                <a id= "flex-item" style="padding-right:10px" href="#home">Apps</a>
+                <a id= "flex-item" style="padding-right:8px" href="#home">Apps</a>
             </div>
 
             <div id="home">
@@ -110,10 +108,11 @@
                     <img id="laptop_img" src="desk_laptop2.jpg" alt="image of laptop">
                 </div>
                 <div id="intro">
-                    <span id="intro-large" style="margin-top: 28px; font-size: 50px;">Hi </span>
+                    <p> </p>
+                    <span id="intro-large" style="margin-top: 34px; font-size: 50px;">Hi </span>
                     <span style="font-size: 34px;"> &#10024;<br></span>
                     <span id="intro-large">I'm Saloni Karanth.</span>
-                    <p id="intro-small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and App developement.  </p>
+                    <p id="intro-small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and App development.  </p>
                 </div>
             </div>
         
