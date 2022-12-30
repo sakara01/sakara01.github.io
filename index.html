@@ -7,109 +7,26 @@
 <html lang='en'>
     <head>
         <meta charset="UTF-8">
+        <title>Saloni Karanth</title>
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+        <!--comfortaa-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+        <!--source code pro font-->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+        <!--jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"> </script>
+
+        <!--ubuntu, lato, montserrat-->
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
         <style>
-            #container{
-                margin-left:auto;
-                margin-right:auto;
-                position:relative;
-                left: 0;
-                right: 0;
-                font-family: 'Comfortaa', cursive;
-                
-            }
-
-            #home{
-                position: absolute;
-                top: 90px;
-            }
-            
-            #laptop_img{
-                width: 80%;
-                top:0px;
-                float: right;
-                border-radius: 1%;
-                border-width: 3px 3px 3px 3px;
-                border-style: solid;
-                
-            }
-
-            .mode{
-                background-color: #FAF9F6;
-                color: #090E09;
-            }
-
-            body {
-                margin-top: 0;
-                margin-left: 0;
-                margin-right: 0;
-                margin-bottom: 0;
-            }
-
-            #intro{
-                background-color: rgba(230,230,230,0.90);
-                color: black;
-                width:56%;
-                float: left;
-                margin-left: -4%;
-                /*margin-top: -42%;*/
-                position: absolute;
-                top:20%;
-                border-radius: 1%;
-                border-color: black;
-                border-width: 2px 2px 2px 2px;
-                border-style: solid;
-            }
-            #intro-large{
-                font-size: 54px;
-                padding-left: 10px;
-                font-weight: 300;
-            }
-            #intro-small{
-                padding-bottom: 10px;
-                padding-left: 15px;
-            }
-            /*#navbar{
-                overflow: hidden;
-                float: left;
-            }*/
-
-            #navbase{
-               
-                position:fixed;
-                background-color: #FAF9F6;
-                z-index: 1;
-                width: 100%;
-                left:0;
-                height:90px;
-                
-            }
-            #navbar-container{
-                position: relative;
-                
-                z-index: 2;
-                height: 90px;
-            }
-            #navbar{
-                display: flex;
-                text-align: center;
-                /*float: inline-end;*/
-                font-size: 22px;
-                position:fixed;
-                
-                z-index: 10;
-                
-            }
-            #flex-item{
-                flex: 50%;
-                padding: 30px;
-                text-decoration: none;
-            }
+            @import url("gitstyle.css");
             @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-        
         </style>
     </head>
     
@@ -120,21 +37,29 @@
                 <div id="navbar">
                     <a id= "flex-item" href="#home">Home</a>
                     <a id= "flex-item" href="#about">About</a>
-                    <a id= "flex-item" href="#home">Skills</a>
-                    <a id= "flex-item" href="#about">Resume</a>
-                    <a id= "flex-item" style="padding-right:8px" href="#home">Apps</a>
+                    <a id= "flex-item" href="#skills">Skills</a>
+                    <a id= "flex-item" href="resume nov 2022 .pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                    <a id= "flex-item" href="#apps">Apps</a>
+                    <button id= "flex-item" class="mode-button" >&#9733;</button>
+                </div>
+                <div id="icon-holder" >
+                    <img style="width:100%;" src="favicon.ico" alt="favicon">
                 </div>
             </div>
             
 
             <div id="home">
                 <div>
-                    <img id="laptop_img" src="desk_laptop2.jpg" alt="image of laptop">
+                    <div id="img-holder">
+                        <img id="laptop_img" src="code.png" alt="image of laptop" >
+                        <img id="laptop_img2" src="desk_laptop.jpg" alt="image2 of laptop" >
+                    </div>
                 </div>
                 <div id="intro">
                     <p> </p>
-                    <span id="intro-large" style="margin-top: 34px; font-size: 50px;">Hi </span>
-                    <span style="font-size: 34px;"> &#10024;<br></span>
+                    <span id="intro-large" style="margin-top: 34px; font-size: 50px;">Hi</span>
+                    <span style="font-size: 34px; position:absolute; left:80px; top:20px;"> &#10024;<br></span>
+                    <br>
                     <span id="intro-large">I'm Saloni Karanth.</span>
                     <p id="intro-small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and App development.  </p>
                 </div>
@@ -146,6 +71,8 @@
     <script>
         window.onload=resize_page();
         window.onload= findNavbarDistance();
+        window.onload= findImgHolderHeight();
+        //window.onscroll= scroll_shadow();
 
         //containerWidth is size of window, navbarWidth is size of navbar, substract to get distance from left edge of container
         function findNavbarDistance(){
@@ -173,7 +100,80 @@
             else {
                 document.getElementById("container").style.width="50%";
             }
-            
         }
+
+        function findImgHolderHeight(){
+            img_height= document.getElementById("laptop_img").clientHeight;
+            console.log(img_height);
+            document.getElementById("img-holder").style.height=parseInt(img_height)+"px";
+        }
+
+        //animation to increase width of laptop_img
+        /*
+        $("#laptop_img").mouseover(function(){
+            $("#laptop_img").width('84%');
+        })
+        $("#laptop_img").mouseleave(function(){
+            $("#laptop_img").width('80%');
+        })
+        */
+       
+        //adds shadow to navbar if user has scrolled
+        document.addEventListener("scroll",function(){
+            console.log("add event");
+            if (document.documentElement.scrollTop>2){
+                console.log("if");
+                $("#navbase").addClass("shadow",2000);
+            }
+            else 
+            $("#navbase").removeClass("shadow",6000);
+        })
+
+        $("#icon-holder").click(function(){
+            location.reload();
+        })
+
+        $("#img-holder").mouseenter(function(){
+            $("#laptop_img2").fadeIn(500);
+          
+            
+        })
+
+        $("#img-holder").mouseleave(function(){
+            $("#laptop_img2").stop(true).fadeOut(500);
+            
+        })
+
+        
+
+        /*
+        $(document).ready(function(){
+            $("#laptop_img").hover(function(){
+                $(this).attr('src','desk_laptop2.jpg');
+            }, function(){
+                $(this).attr('src','code.png');
+            });
+        })
+        
+        /*
+        $(document).ready(function(){
+            $("#laptop_img").hover(function(){
+                $(this).attr('src','desk_laptop2.jpg');
+            }, function(){
+                $(this).attr('src','code.png');
+            });
+        })
+        */
+
+        /*
+        function scroll_shadow(){
+            console.log("scroll_shadow working");
+            if (document.documentElement.scrollTop>1){
+                console.log("if working");
+                document.getElementById("navbase").classList.add("shadow");
+            }
+        }
+        */
+
     </script>
 </html>
