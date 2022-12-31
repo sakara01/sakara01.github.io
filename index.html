@@ -34,7 +34,7 @@
         <div>
             <div id="img-holder">
                 <img id="laptop_img" src="phone.jpg" alt="image of laptop" >
-                <img id="laptop_img2" src="code.png" alt="image2 of laptop" >
+                <!--<img id="laptop_img2" src="code.png" alt="image2 of laptop" >-->
             </div>
         </div>
         
@@ -44,16 +44,16 @@
             <div id="navbase"></div>
             <div id="navbar-container">
                 <div id="navbar">
-                    <a class= "flex-item home"  href="#home">Home</a>
+                    <div class= "flex-item"><a class= "home"  href="#home">Home</a></div>
                     <span id="underline"></span>
                     <span class="flex-spacer"></span>
-                    <a class= "flex-item" href="#about">About</a>
+                    <div class= "flex-item"><a  href="#about">About</a></div>
                     <span class="flex-spacer"></span>
-                    <a class= "flex-item" href="#skills">Skills</a>
+                    <div class= "flex-item"><a  href="#skills">Skills</a></div>
                     <span class="flex-spacer"></span>
-                    <a class= "flex-item" href="resume nov 2022 .pdf" target="_blank" rel="noopener noreferrer">Resume</a>  <!--rel prevents malicious attacks-->
+                    <div class= "flex-item"><a  href="resume dec 2022 .pdf" target="_blank" rel="noopener noreferrer">Resume</a></div>  <!--rel prevents malicious attacks-->
                     <span class="flex-spacer"></span>
-                    <a class= "flex-item" href="#apps">Apps</a>
+                    <div class= "flex-item"><a  href="#contact">Contact</a></div>
                     <span class="flex-spacer"></span>
                     <button class="mode-button" >&#9733;</button>
                 </div>
@@ -67,24 +67,30 @@
             <div id="home">
                 
                 <div id="intro">
-                    <p> </p>
-                    <span id="intro-large" style="margin-top: 34px; font-size: 50px;">Hi</span>
-                    <span style="font-size: 34px; position:absolute; left:80px; top:20px;"> &#10024;<br></span>
-                    <br>
-                    <span id="intro-large">I'm Saloni Karanth.</span>
-                    <p id="intro-small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and Mobile App development.  </p>
+                    <span id="intro-large" >Hi, I'm Saloni Karanth.</span>
+                    <!--<span style="font-size: 34px; position:absolute; left:80px; top:20px;"> &#10024;<br></span>-->
+                    <!--<p id="intro-small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and Mobile App development.  </p> -->
                 </div>
             </div>
             
             <!--about section-->
-            <div>
-                
+            <div id="about">
+                <div id="image-holder">
+                    <img id="image" src="sunset.jpg" >
+                </div>
+
+                <div id="about-text">
+                    <p id="title">About me</p>
+                    <p id="small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and Mobile App development.</p>
+                    <p id="small">When I'm not coding, I really enjoy hiking through Florida trails and Preserves, and just being surrounded by nature.&#127794;</p>
+                </div>
             </div>
         </div>
 
     </body>
     <script>
         window.onload=resize_page();
+        window.onload=resize_img();
         window.onload= findNavbarDistance();
         //window.onload= findImgHolderHeight();
         //window.onscroll= scroll_shadow();
@@ -93,7 +99,7 @@
         function findNavbarDistance(){
             containerWidth= document.getElementById("container").clientWidth;
             navbarWidth= document.getElementById("navbar").clientWidth;
-            distance=(containerWidth-navbarWidth);
+            distance=(containerWidth-navbarWidth)-50;
             passvalue= parseInt(distance)+"px";
             document.getElementById("navbar").style.marginLeft=passvalue;   //adds margin to navbar elements to get correct alignment.
         }
@@ -102,18 +108,27 @@
         function resize_page(){
             winWidth= window.innerWidth;
             if (winWidth<=1400){
-                document.getElementById("container").style.width="85%";
+                document.getElementById("container").style.width="90%";
             }
             else if (winWidth<=1800){
-                document.getElementById("container").style.width="75%";
+                document.getElementById("container").style.width="80%";
             }
             else if (winWidth<=2200){
-                document.getElementById("container").style.width="65%";
+                document.getElementById("container").style.width="70%";
             }
             else {
-                document.getElementById("container").style.width="50%";
+                document.getElementById("container").style.width="60%";
             }
         }
+
+        function resize_img(){
+            //containerWidth= document.getElementById("container").clientWidth;
+            winWidth=window.innerWidth;
+            imgHeight= winWidth/2.1;
+            document.getElementById("img-holder").style.height=parseInt(imgHeight)+"px";
+            document.getElementById("home").style.height=parseInt(imgHeight-50)+"px";
+        }
+
 
         /*
        
