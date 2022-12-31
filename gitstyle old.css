@@ -11,16 +11,15 @@
 #home{
     position: absolute;
     top: 90px;
-    width:100%;
     
 }
 
 #img-holder{
-    width: 100%;
+    width: 80%;
     top:0px;
-    z-index:1;
-    position: absolute;
-    filter:brightness(70%)
+    float: right;
+    position: relative;
+    margin-right: -28px;
 }
 
 #laptop_img{
@@ -40,16 +39,15 @@
     z-index:8;
     display:none;
 }
-
+/*
+#img-holder:hover #laptop_img2{
+    display:initial;
+}
+*/
 
 .mode{
     background-color: #FAF9F6;
     color: #090E09;
-}
-
-#background-img{
-    height: 100%;
-
 }
 
 body {
@@ -91,11 +89,11 @@ body {
 
 #navbase{
     position:fixed;
-    /*background-color: #FAF9F6;*/
+    background-color: #FAF9F6;
     z-index: 900;
     width: 100%;
     left:0;
-    height: 50px; 
+    height:86px; 
 
     -webkit-transition: box-shadow 0.5s ease;
                    
@@ -108,46 +106,32 @@ body {
 #navbar-container{
     position: relative;
     z-index: 950;
-    height: 50px;
+    height: 90px;
 }
 #navbar{
     display: flex;
     text-align: center;
     /*float: inline-end;*/
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 19px;
     position:fixed;
     z-index: 1000;
-    color:#FAF9F6;
-    
+    color:#090E09;
 }
 a:link{
-    color:white;
+    color:#090E09;
 }
 a:visited{
-    color:white;
+    color:#090E09;
 }
-.flex-item{
+#flex-item{
     flex: 50%;
-    padding: 18px 0px 0px;
+    padding: 30px;
     text-decoration: none;
-    line-height: 1.12;
-}
-.flex-spacer{
-    flex: 50%;
-    padding: 18px 20px 0px;
-    text-decoration: none;
-}
-
-.underline{
-    border-bottom: 2px solid white;
-    width:1px;
-    
 }
 
 #icon-holder{
     width:40px;
-    padding-top: 5px;
+    padding-top: 22px;
     opacity: 0.8;
     margin-left: -2%;
     position: fixed;
@@ -158,6 +142,6 @@ a:visited{
     cursor: pointer;
     padding-right:0; 
     font-size: 30px; 
-    margin-top: 4px; 
+    margin-top: -10px; 
     margin-right: -40px;
 }

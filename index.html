@@ -19,7 +19,7 @@
         <!--ubuntu, lato, montserrat-->
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
         <style>
-            @import url("gitstyle.css");
+            @import url("gitstyle copy.css");
             @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
         </style>
 
@@ -30,32 +30,42 @@
     </head>
     
     <body class="mode" >
+        <!--background images-->
+        <div>
+            <div id="img-holder">
+                <img id="laptop_img" src="phone.jpg" alt="image of laptop" >
+                <img id="laptop_img2" src="code.png" alt="image2 of laptop" >
+            </div>
+        </div>
+        
         <div id="container">
-
+            
             <!--navbar holder-->
             <div id="navbase"></div>
             <div id="navbar-container">
                 <div id="navbar">
-                    <a id= "flex-item" href="#home">Home</a>
-                    <a id= "flex-item" href="#about">About</a>
-                    <a id= "flex-item" href="#skills">Skills</a>
-                    <a id= "flex-item" href="resume nov 2022 .pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-                    <a id= "flex-item" href="#apps">Apps</a>
-                    <button id= "flex-item" class="mode-button" >&#9733;</button>
+                    <a class= "flex-item home"  href="#home">Home</a>
+                    <span id="underline"></span>
+                    <span class="flex-spacer"></span>
+                    <a class= "flex-item" href="#about">About</a>
+                    <span class="flex-spacer"></span>
+                    <a class= "flex-item" href="#skills">Skills</a>
+                    <span class="flex-spacer"></span>
+                    <a class= "flex-item" href="resume nov 2022 .pdf" target="_blank" rel="noopener noreferrer">Resume</a>  <!--rel prevents malicious attacks-->
+                    <span class="flex-spacer"></span>
+                    <a class= "flex-item" href="#apps">Apps</a>
+                    <span class="flex-spacer"></span>
+                    <button class="mode-button" >&#9733;</button>
                 </div>
                 <div id="icon-holder" >
                     <img style="width:100%;" src="favicon.ico" alt="favicon">
                 </div>
             </div>
             
+
             <!--home section-->
             <div id="home">
-                <div>
-                    <div id="img-holder">
-                        <img id="laptop_img" src="phone.jpg" alt="image of laptop" >
-                        <img id="laptop_img2" src="code.png" alt="image2 of laptop" >
-                    </div>
-                </div>
+                
                 <div id="intro">
                     <p> </p>
                     <span id="intro-large" style="margin-top: 34px; font-size: 50px;">Hi</span>
@@ -76,7 +86,7 @@
     <script>
         window.onload=resize_page();
         window.onload= findNavbarDistance();
-        window.onload= findImgHolderHeight();
+        //window.onload= findImgHolderHeight();
         //window.onscroll= scroll_shadow();
 
         //containerWidth is size of window, navbarWidth is size of navbar, substract to get distance from left edge of container
@@ -105,10 +115,43 @@
             }
         }
 
+        /*
+       
+        //adds shadow to navbar if user has scrolled
+        document.addEventListener("scroll",function(){
+            if (document.documentElement.scrollTop>2){
+                $("#navbase").addClass("shadow",2000);
+            }
+            else 
+            $("#navbase").removeClass("shadow",6000);
+        })
+        */
+
+        //icon click reloads page
+        $("#icon-holder").click(function(){
+            location.reload();
+        })
+
+        
+        $(".home").mouseenter(function(){ 
+            console.log("home");
+            //$(".home").addClass("underline");
+          
+        })
+
+
+
+
+
+
+
+
+        /*
         function findImgHolderHeight(){
             img_height= document.getElementById("laptop_img").clientHeight;
             document.getElementById("img-holder").style.height=parseInt(img_height)+"px";
         }
+        */
 
         //animation to increase width of laptop_img
         /*
@@ -119,22 +162,8 @@
             $("#laptop_img").width('80%');
         })
         */
-       
-        //adds shadow to navbar if user has scrolled
-        document.addEventListener("scroll",function(){
-            if (document.documentElement.scrollTop>2){
-                $("#navbase").addClass("shadow",2000);
-            }
-            else 
-            $("#navbase").removeClass("shadow",6000);
-        })
 
-        //icon click reloads page
-        $("#icon-holder").click(function(){
-            location.reload();
-        })
-
-
+        /*
         //change img on mouse activity
         $("#img-holder").mouseenter(function(){
             $("#laptop_img2").fadeIn(500);  
@@ -143,6 +172,7 @@
         $("#img-holder").mouseleave(function(){
             $("#laptop_img2").stop(true).fadeOut(500);   
         })
+        */
 
         
 
