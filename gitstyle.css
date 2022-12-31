@@ -170,11 +170,13 @@ a{
 }
 
 #icon-holder{
-    width:32px;
-    margin-top: 22px;
-    opacity: 0.8;
+    margin-top: 0;
     margin-left: 4%;
     position: fixed;
+    color: white;
+    font-size: 30px;
+    line-height: 1;
+    height:30px;
 }
 .mode-button{
     background:none;
@@ -184,6 +186,7 @@ a{
     font-size: 30px; 
     margin-top: 12px; 
     margin-right: 0px;
+    color: white;
 }
 
 #about{
