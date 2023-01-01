@@ -18,6 +18,13 @@
 
         <!--ubuntu, lato, montserrat-->
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+        <!--quicksand-->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <!--sawarabi-->
+        <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet"> 
+        <!--alegreya-->
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet"> 
+        
         <style>
             @import url("gitstyle.css");
             @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
@@ -41,7 +48,8 @@
         <div id="container">
             
             <!--navbar holder-->
-            <div id="navbase"></div>
+            <!--<div id="navbase"></div>-->
+            <div id="navbase-scroll"></div>
             <div id="navbar-container">
                 <div id="navbar">
                     <div class= "flex-item"><a class= "home"  href="#home">Home</a></div>
@@ -62,6 +70,7 @@
                 </div>
             </div>
             
+            <div id="navbase-scroll"></div>
 
             <!--home section-->
             <div id="home">
@@ -130,18 +139,24 @@
         }
 
 
-        /*
+        
        
         //adds shadow to navbar if user has scrolled
         document.addEventListener("scroll",function(){
-            if (document.documentElement.scrollTop>2){
-                $("#navbase").addClass("shadow",2000);
+            if (document.documentElement.scrollTop>520){
+                console.log("scrolled");
+                $("#navbase-scroll").css("top","0");
+                //$("#navbase-scroll").addClass("shadow",1000);
             }
-            else 
-            $("#navbase").removeClass("shadow",6000);
+            else {
+                $("#navbase-scroll").css("top","-70px");
+                //$("#navbase-scroll").removeClass("shadow",1000);
+            }
         })
-        */
+        
 
+        
+        /*
         //icon click reloads page
         $("#icon-holder").click(function(){
             location.reload();

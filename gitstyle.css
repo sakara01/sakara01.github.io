@@ -5,7 +5,7 @@
     position:relative;
     left: 0;
     right: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Alegreya', serif;
 }
 
 #home{
@@ -69,16 +69,16 @@ body {
 #intro{
     background-color: rgba(54, 54, 54, 0);
     
-    width:80%;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
     position: relative;
-    
     border-radius: 1%;
     /*border:2px solid black;*/
     z-index: 10;
     text-align: center;
     line-height: 1.2;
+    font-family: 'Sawarabi Mincho', serif;
 }
 #intro-large{
     font-size: 72px;
@@ -89,10 +89,10 @@ body {
     
 }
 
-
+/*
 #navbase{
     position:fixed;
-    /*background-color: #FAF9F6;*/
+    background-color: #FAF9F6;
     z-index: 900;
     width: 100%;
     left:0;
@@ -101,10 +101,13 @@ body {
     -webkit-transition: box-shadow 0.5s ease;
                    
 }
+*/
 
 .shadow{
-    box-shadow:0 0 8px 0 rgba(0,0,0,1);            
+    box-shadow:0 0 6px 0 rgba(0,0,0,1);            
 }
+
+
 
 #navbar-container{
     position: relative;
@@ -120,6 +123,19 @@ body {
     color:#FAF9F6;
     
 }
+
+#navbase-scroll{
+    position:fixed;
+    background-color: rgba(54, 54, 54, 0.9);
+    z-index: 900;
+    width: 100%;
+    left:0;
+    top:-70px;
+    height: 70px; 
+    transition: top 0.4s;
+    /*-webkit-transition: box-shadow 0.3s ease;     */  
+}
+
 
 a{
     position:relative;
@@ -190,20 +206,23 @@ a{
 }
 
 #about{
-    height:400px;
+    margin-top: 20px;
+    height:460px;
+    display: flex;
+    align-items: center;
 }
 
 #about-text{
-    position: relative;
-    float:right;
+    position: absolute;
+    right: 0;
     width: 64%;
-    top: 40%;
 }
 #about #image-holder{
     position: relative;
-    float:left;
+    margin-left: 0;
     margin-top:28px;
     width: 30%;
+    
 }
 
 #about #image{
@@ -215,5 +234,5 @@ a{
 }
 
 #about #small{
-    font-size: 16px;
+    font-size: 19px;
 }
