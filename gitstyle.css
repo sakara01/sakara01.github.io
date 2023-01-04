@@ -121,7 +121,7 @@ body {
     position:fixed;
     z-index: 1000;
     color:#FAF9F6;
-    
+    transition: all 0.4s ease;
 }
 
 #navbase-scroll{
@@ -130,8 +130,8 @@ body {
     z-index: 900;
     width: 100%;
     left:0;
-    top:-70px;
-    height: 70px; 
+    top:-50px;
+    height: 50px; 
     transition: top 0.4s;
     /*-webkit-transition: box-shadow 0.3s ease;     */  
 }
@@ -143,7 +143,7 @@ a{
     color:white;
 }
 
-
+/*to make links interactive*/
 #navbar a::before{
     content: "";
     position: absolute;
@@ -186,15 +186,16 @@ a{
 }
 
 #icon-holder{
-    margin-top: 0;
+    margin-top: 20px;
     margin-left: 4%;
     position: fixed;
     color: white;
     font-size: 30px;
     line-height: 1;
     height:30px;
+    transition: all 0.4s ease;
 }
-.mode-button{
+#mode-button{
     background:none;
     border:none;
     cursor: pointer;
@@ -206,8 +207,8 @@ a{
 }
 
 #about{
-    margin-top: 20px;
-    height:460px;
+    position: relative;
+    margin-top: 34px;
     display: flex;
     align-items: center;
 }
@@ -218,11 +219,10 @@ a{
     width: 64%;
 }
 #about #image-holder{
-    position: relative;
-    margin-left: 0;
-    margin-top:28px;
+    position: absolute;
+    left: 0;
     width: 30%;
-    
+    top:0;
 }
 
 #about #image{
@@ -230,9 +230,153 @@ a{
 }
 
 #about #title{
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 18px;
 }
 
 #about #small{
     font-size: 19px;
 }
+
+#skills{
+    position: relative;
+    margin-top: 14px;
+    height:400px;
+}
+
+#skills #header{
+    position:relative;
+    font-size: 34px;
+    padding-top:50px;
+    border-bottom: 2px solid black;
+}
+
+#skills #tiles-first{
+    display:flex;
+    float:right;
+}
+
+#skills #tiles-second{
+    display:flex;
+    float:right;
+}
+
+#skills .tile{
+    width:100px;
+    height:100px;
+    margin-right:21px;
+    position:relative;
+}
+
+#skills .tile img{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:100px;
+}
+
+#JavaScript img{
+    height:72px;
+    width:72px !important; 
+}
+
+
+#C img{
+    height:90px; 
+    width:90px!important;
+}
+
+#Python img{
+    height:80px; 
+    width:80px !important;
+}
+
+#mySQL img{
+    width:120px !important;
+    left: -20px !important;
+    right: -20px !important;
+}
+
+#Linux-Shell img{
+    height:80px !important;
+    width:80px !important;
+}
+
+#Cplusplus img{
+    height:90px; 
+    width:90px!important;
+}
+
+#more{
+    width:240px;
+    font-size: 19px;
+    opacity:0;
+    border:1.6px solid black;
+    position:absolute;
+    left:5px;
+    top:110px;
+    border-radius: 3%;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+
+#Kotlin img{
+    height:70px;
+    width:70px !important;
+    left: -16px !important;
+}
+
+#contact{
+    position:relative;
+    height:100px;
+    display:flex;
+    align-items: center;
+    background-color: rgba(54, 54, 54, 0.9) ;
+    color:white;
+}
+
+#contact-holder{
+    position:relative;
+    width:600px;
+    display:flex;
+    align-items: center;
+    margin:auto;
+}
+
+#thanks{
+    padding-top:6px;
+    position:relative;
+    text-align: center;
+}
+
+#contact #icons{
+    /*position: absolute;
+    top:50px;
+    right:200px;*/
+    display:flex ;
+    align-items: center;
+    width:max-content;
+    margin-right: auto;
+}
+
+#contact #header{
+    /*position:absolute;*/
+    width:max-content;
+    margin-left:auto;
+    font-size: 20px;
+}
+
+#contact a{
+    text-decoration: none;
+    margin-right:20px;
+    margin-left:20px;
+}
+#contact img{
+    width:30px;
+}
+
+

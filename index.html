@@ -40,7 +40,7 @@
         <!--background images-->
         <div>
             <div id="img-holder">
-                <img id="laptop_img" src="laptop_plant.jpg" alt="image of laptop" >
+                <img id="laptop_img" src="laptop_plant.jpg" alt="image of laptop; credit: workperch " >
                 <!--<img id="laptop_img2" src="code.png" alt="image2 of laptop" >-->
             </div>
         </div>
@@ -63,10 +63,10 @@
                     <span class="flex-spacer"></span>
                     <div class= "flex-item"><a  href="#contact">Contact</a></div>
                     <span class="flex-spacer"></span>
-                    <button class="mode-button" >&#9734;</button>
+                    <button id="mode-button" >&#9734;</button>
                 </div>
                 <div id="icon-holder" >
-                    <p style="margin-top: 22px; letter-spacing: 0.1em;">SK</p>
+                    <p style="margin:0; letter-spacing: 0.1em;">SK</p>
                 </div>
             </div>
             
@@ -85,22 +85,102 @@
             <!--about section-->
             <div id="about">
                 <div id="image-holder">
-                    <img id="image" src="sunset.jpg" >
+                    <img id="image" src="sunset.jpg" alt="macbook pro on desk; credit: cristofer maximilian">
                 </div>
 
                 <div id="about-text">
                     <p id="title">About me</p>
                     <p id="small">I'm a Junior at University of Florida majoring in Computer Science, and I'm really passionate about Website and Mobile App development.</p>
-                    <p id="small">When I'm not coding, I really enjoy hiking through Florida Trails and Preserves, and just being surrounded by nature.&#127794;</p>
+                    <p id="small">When I'm not coding, I really enjoy hiking through Florida Trails and Preserves, and just being surrounded by nature&#127794;. <br></p>
+                    <p id="small">I also like playing videogames&#127918; and reading novels about Greek Mythology!🧜‍♂️</p>
+                </div>
+            </div>
+
+            <!--skills section-->
+            <div id="skills">
+                <div id="header">
+                    <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Technical Skills</div>
+                </div>
+                <div style="overflow: auto; margin:10px;">
+                    <div id="tiles-first">
+                        <div id="C" class="tile">
+                            <img src="C-icon.png" alt="C-icon; credit: icons8">
+                        </div>
+                        <div id="HTML5" class="tile">
+                            <img src="html5.png" alt="html5; credit: stickpng">
+                        </div>
+                        <div id="JavaScript" class="tile">
+                            <img src="javascript.png" alt="javascript; credit: wikimedia commons">
+                        </div>
+                        <div id="PHP" class="tile">
+                            <img src="php.png" alt="php; credit: icons8">
+                        </div>
+                        <div id="jQuery" class="tile">
+                            <img id="jQueryimg" src="jquery-logo.png" alt="jquery; credit: brands logos">
+                        </div>
+                        <div id="Linux-Shell" data-name="Linux Shell" class="tile">
+                            <img id="linuximg" src="terminal.png" alt="terminal; credit: pngwing">
+                        </div>
+                    </div>
+                </div>
+                <div style="overflow: auto; margin-top:14px;">
+                    <div id="tiles-second">
+                        <div id="Cplusplus" data-name="C++" class="tile">
+                            <img src="c++.png" alt="c++; credit: pngegg">
+                        </div>
+                        <div id="mySQL" class="tile">
+                            <img src="mysql.png" alt="mysql; credit: freepnglogos">
+                        </div>
+                        <div id="Python" class="tile">
+                            <img src="python.png" alt="python; credit: stickpng">
+                        </div>
+                        <div id="Kotlin" class="tile">
+                            <img src="Kotlin.png" alt="kotlin; credit: wikimedia">
+                        </div>
+                    </div>
+                </div>
+                <div id="more">
+                </div>
+            </div>
+
+            
+        </div>
+        <!--contact-->
+        <div id="contact">
+            <div style="margin:auto;">
+                <div id="contact-holder">
+                    <div id="header">
+                        Reach out to me here &nbsp; &#10147;
+                    </div>
+                    <div id="icons">
+                        <a href="https://www.linkedin.com/in/saloni-karanth-aba1a9225/" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin.png" alt="linkedin; credit:freeiconspng">
+                        </a>
+                        <!--<div id="spacer"></div>-->
+                        <a href="https://github.com/sakara01" target="_blank" rel="noopener noreferrer">
+                            <img src="github.png" alt="github logo; credit: icons8">
+                        </a> 
+                        
+                        <a href="#" id="mail">
+                            <img src="email.png" alt="email logo; credit: icons8">
+                        </a>
+                    </div>
+                </div>
+                <div id="thanks">
+                    Thanks for viewing! &#128156;
                 </div>
             </div>
         </div>
 
     </body>
     <script>
+        //document.cookie= "isDark=false";
+        isDark=false;
         window.onload=resize_page();
-        window.onload=resize_img();
+        window.onload=resize_img_home();
         window.onload= findNavbarDistance();
+        window.onload=resize_about_more();
+        
         //window.onload= findImgHolderHeight();
         //window.onscroll= scroll_shadow();
 
@@ -130,7 +210,7 @@
             }
         }
 
-        function resize_img(){
+        function resize_img_home(){
             //containerWidth= document.getElementById("container").clientWidth;
             winWidth=window.innerWidth;
             imgHeight= winWidth/2.1;
@@ -138,42 +218,107 @@
             document.getElementById("home").style.height=parseInt(imgHeight-50)+"px";
         }
 
+        function resize_about_more(){
+            height= document.getElementById("image-holder").clientHeight;
+            document.getElementById("about").style.height=parseInt(height)+"px";
+            width= (document.getElementById("container").clientWidth- document.getElementById("tiles-first").clientWidth) *0.9;
+            document.getElementById("more").style.width=parseInt(width)+"px";
+        }
 
         
        
         //adds shadow to navbar if user has scrolled
         document.addEventListener("scroll",function(){
-            if (document.documentElement.scrollTop>520){
-                console.log("scrolled");
+            scrollValue=document.getElementById("img-holder").clientHeight -50;
+            if (document.documentElement.scrollTop>scrollValue){
                 $("#navbase-scroll").css("top","0");
+                $("#navbar").css("top","-12px");
+                $("#icon-holder").css("margin-top","9px");
                 //$("#navbase-scroll").addClass("shadow",1000);
             }
             else {
-                $("#navbase-scroll").css("top","-70px");
+                $("#navbase-scroll").css("top","-50px");
+                $("#navbar").css("top","0px");
+                $("#icon-holder").css("margin-top","22px");
                 //$("#navbase-scroll").removeClass("shadow",1000);
             }
         })
         
+        $(".tile").mouseenter(function(){
+            console.log(this);
+            langName=jQuery(this).attr('id');
+            if(langName=="Cplusplus" || langName=="Linux-Shell"){
+                langName=jQuery(this).attr('data-name');
+                //langName=jQuery(langName).name;
+                //console.log(langName);
+            }
+            if(jQuery((this).parentElement).attr('id')=="tiles-first")
+                level="Proficient";
+            else level="Advanced";
+            
+            displayMore(langName,level);
+        })
+
+        $(".tile").mouseleave(function(){
+            displayLess("C");
+        })
+
+        function displayMore(langName,level){
+            //jQuery("#more").css("opacity","0");
+            document.getElementById("more").innerHTML=`<p> ${langName} &nbsp;: &nbsp;${level} </p>`;
+            //jQuery("#more").css("border","1.6px solid black" )
+            //document.getElementById("more").style.visibility="visible";
+            jQuery("#more").css("opacity","1");
+        }
+
+        function displayLess(langName,level){
+            //document.getElementById("more").style.visibility="hidden";
+            //jQuery("#more").fadeOut(1000);
+            jQuery("#more").css("opacity","0");
+        }
 
         
-        /*
+        $("#mail").click(function(){
+            window.open('mailto:s.karanth@ufl.edu');
+        })
+        
+        document.getElementById("mode-button").addEventListener("click",function(){
+            console.log("listener");
+            if (isDark){
+                console.log("if");
+                $("body").css("background-color","white");
+                $("body").css("color","black");
+                $("#skills #header").css("border-bottom","2px solid black");
+                $("#more").css("border","1.6px solid black");
+                $("#jQueryimg").attr("src","jquery-logo.png");
+                $("#linuximg").attr("src","terminal.png");
+                isDark=false; 
+            }
+            else {
+                console.log("else");
+                $("body").css("background-color","rgb(30,30,30)");
+                $("body").css("color","white");
+                $("#skills #header").css("border-bottom","2px solid white");
+                $("#more").css("border","1.6px solid white");
+                $("#jQueryimg").attr("src","jQueryWhite.png");
+                $("#linuximg").attr("src","terminalWhite.png");
+                isDark=true;
+            }
+        })
+
+        
+        
         //icon click reloads page
         $("#icon-holder").click(function(){
             location.reload();
         })
 
-        
+        /*
         $(".home").mouseenter(function(){ 
             console.log("home");
             //$(".home").addClass("underline");
           
         })
-
-
-
-
-
-
 
 
         /*
