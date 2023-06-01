@@ -278,6 +278,18 @@ a{
     line-height: 2;
 }
 
+#caffinder-text{
+    position: relative;
+    width: 50%;
+    margin-left: 44px;
+}
+
+#caffinder-inside-text{
+    margin-left:10px;
+    line-height: 2;
+    margin-right: 20px;
+}
+
 #apps #header{
     position:relative;
     font-size: 34px;
@@ -285,7 +297,7 @@ a{
     border-bottom: 2px solid black;
 }
 
-#apps #image-holder{
+#apps .image-holder{
     position: relative;
     right: 20px;
     margin-top: 30px;
@@ -294,13 +306,21 @@ a{
     margin-left: auto;
 }
 
-#apps #image-holder-variant{
+#apps .image-holder-variant{
     position: relative;
     left: 60px;
     margin-top: 30px;
     width: 320px;
     float: right;
     margin-right: auto;
+}
+
+#apps .image-holder-website{
+    position: relative;
+    margin-top: 30px;
+    width: 680px;
+    float: right;
+    margin-left: auto;
 }
 
 .small{
@@ -313,6 +333,11 @@ a{
 
 #app-spacer{
     height: 100px;
+}
+
+.link{
+    color:navy;
+    text-decoration: underline;
 }
 
 #skills{
