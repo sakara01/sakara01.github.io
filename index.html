@@ -184,8 +184,8 @@
         isDark=false;
         window.onload=resize_page();
         window.onload=resize_img_home();
-        window.onload= findNavbarDistance();
         window.onload=resize_about_more();
+        window.onload= findNavbarDistance();
         
         //window.onload= findImgHolderHeight();
         //window.onscroll= scroll_shadow();
@@ -270,16 +270,11 @@
         })
 
         function displayMore(langName,level){
-            //jQuery("#more").css("opacity","0");
             document.getElementById("more").innerHTML=`<p> ${langName} &nbsp;: &nbsp;${level} </p>`;
-            //jQuery("#more").css("border","1.6px solid black" )
-            //document.getElementById("more").style.visibility="visible";
             jQuery("#more").css("opacity","1");
         }
 
         function displayLess(langName,level){
-            //document.getElementById("more").style.visibility="hidden";
-            //jQuery("#more").fadeOut(1000);
             jQuery("#more").css("opacity","0");
         }
 
