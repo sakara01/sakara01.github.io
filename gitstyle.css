@@ -208,21 +208,19 @@ a{
 
 #about{
     position: relative;
-    margin-top: 90px;
+    margin-top: 144px;
     display: flex;
     align-items: center;
     height:500px;
 }
 
 #about-text{
-    position: absolute;
-    right: 0;
-    width: 64%;
+    position: relative;
+    width: 70%;
+    margin-left: 40px;
 }
 #about #image-holder{
-    position: absolute;
-    left: 0;
-    top:0;
+    position: relative;
     width: 350px;
 }
 
@@ -239,9 +237,87 @@ a{
     font-size: 19px;
 }
 
+#apps{
+    position: relative;
+    margin-top: 130px;
+    height:max-content;
+}
+
+.app{
+    height: 640px;
+    display: flex;
+    align-items: center;
+    margin-top: 110px;
+}
+
+#apps #title{
+    font-size: 30px;
+    margin-bottom: 28px;
+}
+
+#jpdictionary-text{
+    position: relative;
+    width: 64%;
+    margin-left: 44px;
+}
+
+#jp-inside-text{
+    margin-left:10px;
+    line-height: 2;
+    margin-right: 20px;
+}
+
+#sous-text{
+    position: relative;
+    width: 64%;
+    margin-left: auto;
+}
+
+#sous-inside-text{
+    margin-left:10px;
+    line-height: 2;
+}
+
+#apps #header{
+    position:relative;
+    font-size: 34px;
+    padding-top:50px;
+    border-bottom: 2px solid black;
+}
+
+#apps #image-holder{
+    position: relative;
+    right: 20px;
+    margin-top: 30px;
+    width: 320px;
+    float: right;
+    margin-left: auto;
+}
+
+#apps #image-holder-variant{
+    position: relative;
+    left: 60px;
+    margin-top: 30px;
+    width: 320px;
+    float: right;
+    margin-right: auto;
+}
+
+.small{
+    font-size: 18px;
+}
+
+#apps #image{
+    width:100%;
+}
+
+#app-spacer{
+    height: 100px;
+}
+
 #skills{
     position: relative;
-    margin-top: 40px;
+    margin-top: 130px;
     height:400px;
 }
 
@@ -342,33 +418,36 @@ a{
 }
 
 #contact{
-    position:relative;
-    height:100px;
-    margin-top: 40px;
-    display:flex;
+    position: relative;
+    height: 100px;
+    margin-top: 80px;
+    display: flex;
     align-items: center;
-    background-color: rgba(54, 54, 54, 0.9) ;
-    color:white;
+    background-color: rgba(54, 54, 54, 0.9);
+    color: white;
+    height: max-content;
 }
 
 #contact-holder{
-    position:relative;
-    width:600px;
-    display:flex;
+    position: relative;
+    width: 600px;
+    display: flex;
     align-items: center;
-    margin:auto;
+    margin: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+    margin-top: 55px;
+    margin-bottom: 10px;
 }
 
 #thanks{
-    padding-top:6px;
-    position:relative;
+    position: relative;
     text-align: center;
+    margin-bottom: 48px;
+    margin-top: 39px;
 }
 
 #contact #icons{
-    /*position: absolute;
-    top:50px;
-    right:200px;*/
     display:flex ;
     align-items: center;
     width:max-content;
@@ -376,10 +455,10 @@ a{
 }
 
 #contact #header{
-    /*position:absolute;*/
     width:max-content;
     margin-left:auto;
     font-size: 20px;
+    margin-right: 20px;
 }
 
 #contact a{
